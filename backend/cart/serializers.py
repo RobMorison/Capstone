@@ -4,3 +4,4 @@ from .models import Cart
 class CartSerializer(serializers.ModelSerializer):
     model = Cart
     fields = ['id', 'id']
+    depth = 1
