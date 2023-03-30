@@ -8,14 +8,8 @@ const ProductList = ({ products }) => {
         <ul>
             <li>
             {products.map((el) => (
-                el.description
+                <img src={el.image} />
             ))}
-            {products.map((el) => (
-            el.length
-            ))} 
-            {products.map((el) => (
-            el.price
-            ))}  
             </li>
         </ul>
     );
