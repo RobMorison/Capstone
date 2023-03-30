@@ -7,6 +7,10 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
+import BasicBoardPage from "./pages/BasicBoardPage/BasicBoardPage"
+import ThreeWoodPage from "./pages/ThreeWoodPage/ThreeWoodPage";
+import LargeBasicPage from "./pages/LargeBasicPage/LargeBasicPage";
+import BrisketPage from "./pages/BrisketPage/BrisketPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -21,17 +25,21 @@ function App() {
     <div>
       <Navigationbar />
       <Routes>
-        <Route
+        {/* <Route
           path="/"
           element={
             <PrivateRoute>
               <HomePage />
             </PrivateRoute>
           }
-        />
-        <Route path="/product" element={<WelcomePage />} />
+        /> */}
+        <Route path="/" element={<WelcomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
+        <Route path="/1" element={<BasicBoardPage/>} />
+        <Route path="/2" element={<ThreeWoodPage/>} />
+        <Route path="/3" element={<LargeBasicPage/>} />
+        <Route path="/4" element={<BrisketPage/>} />        
       </Routes>
       <Footer />
     </div>
