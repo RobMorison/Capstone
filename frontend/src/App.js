@@ -11,6 +11,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
 import Footer from "./components/Footer/Footer";
+import Navigationbar from "./components/NavigationBar/NavigationBar";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
@@ -18,7 +19,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   return (
     <div>
-      <Navbar />
+      <Navigationbar />
       <Routes>
         <Route
           path="/"
