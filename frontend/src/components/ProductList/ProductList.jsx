@@ -10,11 +10,12 @@ const ProductList = ({ products }) => {
             {products.map((el) => (
                 el.description
             ))}
-            </li>
-            <li>
             {products.map((el) => (
-                el.length
-            ))}     
+            el.length
+            ))} 
+            {products.map((el) => (
+            el.price
+            ))}  
             </li>
         </ul>
     );

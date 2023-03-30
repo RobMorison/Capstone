@@ -4,6 +4,7 @@ import ProductList from '../../components/ProductList/ProductList'
 
 const WelcomePage = () => {
     const[products, setProducts] = useState([])
+    console.log(products)
 
     useEffect(() => {
         getProducts();
