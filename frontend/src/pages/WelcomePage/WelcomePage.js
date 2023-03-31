@@ -1,30 +1,32 @@
-import React, { useState, useEffect } from 'react';
-import axios from "axios"
-import ProductList from '../../components/ProductList/ProductList'
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import ProductList from "../../components/ProductList/ProductList";
+import SearchFunction from "../../components/SearchFunction/SearchFunction";
 
 const WelcomePage = () => {
-    const[products, setProducts] = useState([])
-    console.log(products)
+  const [products, setProducts] = useState([]);
+  console.log(products);
 
-    useEffect(() => {
-        getProducts();
-    }, [])
-    console.log('useeffect');
+  useEffect(() => {
+    getProducts();
+  }, []);
+  console.log("useeffect");
 
-    async function getProducts(){
+  async function getProducts() {
+    await axios
+      .get("http://127.0.0.1:8000/product")
+      .then((response) => setProducts(response.data))
+      .catch((error) => console.error(error));
+    console.log("getproducts", products);
+  }
 
-        await axios
-        .get('http://127.0.0.1:8000/product')
-        .then(response => setProducts(response.data))
-        .catch(error =>console.error(error));
-        console.log('getproducts', products)
-    }
+  return (
+    <>
 
-    return(
-        <>
-        <h1>Hello World</h1>
-        <ProductList products = {products}/></>
-    )
-}
+      <SearchFunction products={products} setProducts={setProducts} />
+      <ProductList products={products} />
+    </>
+  );
+};
 
 export default WelcomePage;

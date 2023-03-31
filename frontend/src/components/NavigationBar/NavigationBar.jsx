@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
+import SearchFunction from '../SearchFunction/SearchFunction';
 
 
 const Navigationbar = () => {
@@ -30,6 +31,7 @@ const Navigationbar = () => {
               <b>Cart</b>
             </Link>
           </li>
+          {/* <SearchFunction/> */}
           <li>
             {user ? (
               <button onClick={logoutUser}>Logout</button>
