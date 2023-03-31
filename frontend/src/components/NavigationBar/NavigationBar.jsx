@@ -15,6 +15,21 @@ const Navigationbar = () => {
               <b>Home</b>
             </Link>
           </li>
+          <li className="brand">
+            <Link to ="/contact_us" style={{ textDecoration: "none", color: "white" }}>
+              <b>Contact Us</b>
+            </Link>
+          </li>
+          <li className="brand">
+            <Link to ="/about_us" style={{ textDecoration: "none", color: "white" }}>
+              <b>About Us</b>
+            </Link>
+          </li>
+          <li className="brand">
+            <Link to ="/cart" style={{ textDecoration: "none", color: "white" }}>
+              <b>Cart</b>
+            </Link>
+          </li>
           <li>
             {user ? (
               <button onClick={logoutUser}>Logout</button>
