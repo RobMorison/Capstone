@@ -1,12 +1,12 @@
 import React from 'react';
+import LargeBasic from '../../components/LargeBasic/LargeBasic';
 
-const LargeBasicPage = () => {
+
+function LargeBasicPage() {
 
     return(
-        <>
-        <h1>LargeBasicPage</h1>
-        <img src= "./img_6510.jpg" alt="basic board"></img>
-        </>
+
+        <LargeBasic/>
     )
 }
 

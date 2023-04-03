@@ -1,12 +1,10 @@
 import React from 'react';
+import Brisket from '../../components/Brisket/Brisket';
 
 const BrisketPage = () => {
 
     return(
-        <>
-        <h1>Brisket Page</h1>
-        <img src= "./img_6510.jpg" alt="basic board"></img>
-        </>
+        <Brisket/>
     )
 }
 

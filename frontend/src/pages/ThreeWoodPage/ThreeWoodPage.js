@@ -1,12 +1,10 @@
 import React from 'react';
+import ThreeBoard from '../../components/ThreeBoard/ThreeBoard';
 
 const ThreeWoodPage = () => {
 
     return(
-        <>
-        <h1>Three Wood Page</h1>
-        <img src= "./img_6510.jpg" alt="basic board"></img>
-        </>
+        <ThreeBoard/>
     )
 }
 
