@@ -15,6 +15,6 @@ const ProductList = ({ products }) => {
             ))}
         </ul>
     );
-}
+} 
 
 export default ProductList;

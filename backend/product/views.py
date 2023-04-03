@@ -16,3 +16,11 @@ def get_all_product(request):
         products = Product.objects.all()
         serializer = ProductSerializer(products, many=True)
         return Response(serializer.data)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])   
+def get_product_id(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    if request.method == 'GET':
+        serializer = ProductSerializer(product);   
+        return Response(serializer.data)
