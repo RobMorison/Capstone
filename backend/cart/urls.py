@@ -2,5 +2,5 @@ from django.urls import path, include
 from .import views
 
 urlpatterns = [
-    path('cart/', views.user_cart),
+    path('cart/', views.get_all_cart),
 ]

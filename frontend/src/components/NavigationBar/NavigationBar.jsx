@@ -17,6 +17,11 @@ const Navigationbar = () => {
             </Link>
           </li>
           <li className="brand">
+            <Link to="/products" style={{ textDecoration: "none", color: "white" }}>
+              <b>Products</b>
+            </Link>
+          </li>
+          <li className="brand">
             <Link to ="/contact_us" style={{ textDecoration: "none", color: "white" }}>
               <b>Contact Us</b>
             </Link>
