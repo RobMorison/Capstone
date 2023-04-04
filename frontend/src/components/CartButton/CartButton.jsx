@@ -2,18 +2,18 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 
 const CartButton = () => {
-
-    const goToCart = () => {
-        <>
-        <Link key={''} to={'/cart'}></Link>
-        </>
+    function handleSubmit(event){
+    
+        
     }
-
+    
     return ( 
-        <>
-        <button onClick={() => goToCart}>
+        <> 
+        <Link to={"/cart"}>
+        <button onClick={handleSubmit}>
             Add to Cart
         </button>
+        </Link>
         </>
      );
 }

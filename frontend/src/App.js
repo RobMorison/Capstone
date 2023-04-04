@@ -41,7 +41,7 @@ function App() {
         <Route path="/products/2" element={<ThreeWoodPage/>} />
         <Route path="/products/3" element={<LargeBasicPage/>} />
         <Route path="/products/4" element={<BrisketPage/>} />
-        <Route path= "/cart/" element={<CartPage/>}/> 
+        <Route path= "/cart" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
       
       </Routes>
       <Footer />

@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import Cart
 
 class CartSerializer(serializers.ModelSerializer):
-    model = Cart
-    fields = ['id', 'id']
-    depth = 1
+    class Meta:
+        model = Cart
+        fields = ['id', 'product', 'user']
+        depth = 1

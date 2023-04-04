@@ -9,17 +9,16 @@ from django.shortcuts import get_object_or_404
 # Create your views here.
 
 @api_view(['GET'])
-@permission_classes (AllowAny)
+@permission_classes([AllowAny])
 
 def get_all_cart(request):
     if request.method == 'GET':
         carts = Cart.objects.all()
         serializer = CartSerializer(carts, many=True)
         return Response(serializer.data)
-# def user_cart(request):
 
-#     serializer = CartSerializer(data=request.data)
-#     if request.method == 'GET':
-#         cart = Cart.objects.filter(user__id=request.user.id)
-#         serializer = CartSerializer(cart, many=True)
-#         return Response(serializer.data)
+def user_cart(request, pk):
+    cart = get_object_or_404(Cart, pk=pk)
+    if request.method == 'GET':
+        serializer = CartSerializer(cart);
+        return Response(serializer.data)
