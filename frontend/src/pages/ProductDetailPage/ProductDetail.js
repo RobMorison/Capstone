@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from "axios"
+import CartButton from '../../components/CartButton/CartButton';
 
 const ProductDetail = () => {
 
@@ -29,15 +30,9 @@ const ProductDetail = () => {
         <h1>{product.description}</h1>
         <h1>{product.price}</h1>
         <img src={product.image} />
+        <CartButton selected_product={product}/>
         </>
-        // <ul>
-            
-        //     {product.map((el) => (
-        //         el.product.name
-        //     ))}
-            
-        // </ul>
-        // 'hello world'
+
         
      );
 }

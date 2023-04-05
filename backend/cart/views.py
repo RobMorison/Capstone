@@ -22,3 +22,12 @@ def user_cart(request, pk):
     if request.method == 'GET':
         serializer = CartSerializer(cart);
         return Response(serializer.data)
+    
+@api_view(['POST'])
+@permission_classes([IsAuthenticated])
+def post_cart(request):
+    if request.method == 'POST':
+        serializer = CartSerializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_201_CREATED)

@@ -43,7 +43,7 @@ function App() {
         <Route path="/products/2" element={<ThreeWoodPage/>} />
         <Route path="/products/3" element={<LargeBasicPage/>} />
         <Route path="/products/4" element={<BrisketPage/>} /> */}
-        <Route path= "/cart/:productId" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
+        <Route path= "/cart/post/:productId" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
       
       </Routes>
       <Footer />
