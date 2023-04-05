@@ -12,6 +12,7 @@ import ThreeWoodPage from "./pages/ThreeWoodPage/ThreeWoodPage";
 import LargeBasicPage from "./pages/LargeBasicPage/LargeBasicPage";
 import BrisketPage from "./pages/BrisketPage/BrisketPage";
 import CartPage from "./pages/CartPage/CartPage"
+import ProductDetailPage from "./pages/ProductDetailPage/ProductDetail";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -37,11 +38,12 @@ function App() {
         <Route path="/products" element={<WelcomePage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-        <Route path="/products/1" element={<BasicBoardPage/>} />
+        <Route path="/products/:productId" element={<ProductDetailPage/>}/> {/* ProductDetailPage component */}
+        {/* <Route path="/products/1" element={<BasicBoardPage/>} />
         <Route path="/products/2" element={<ThreeWoodPage/>} />
         <Route path="/products/3" element={<LargeBasicPage/>} />
-        <Route path="/products/4" element={<BrisketPage/>} />
-        <Route path= "/cart" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
+        <Route path="/products/4" element={<BrisketPage/>} /> */}
+        <Route path= "/cart/:productId" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
       
       </Routes>
       <Footer />

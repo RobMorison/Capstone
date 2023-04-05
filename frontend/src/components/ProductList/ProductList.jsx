@@ -4,7 +4,7 @@ import { useNavigate, Link } from 'react-router-dom'
 
 const ProductList = ({ products }) => {
     console.log('product list', products)
-    const navigate = useNavigate
+
 
     return (
         <ul>

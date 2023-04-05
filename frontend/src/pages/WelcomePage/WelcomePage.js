@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductList from "../../components/ProductList/ProductList";
 import SearchFunction from "../../components/SearchFunction/SearchFunction";
-import BasicBoard from "../../components/BasicBoard/BasicBoard";
+
 
 const WelcomePage = () => {
   const [products, setProducts] = useState([]);
