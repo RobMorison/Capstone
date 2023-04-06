@@ -10,7 +10,7 @@ ReactDOM.render(
       <AuthProvider>
         <App />
       </AuthProvider>
-    </Router>
+    </Router>,
   </React.StrictMode>,
   document.getElementById("root")
 );

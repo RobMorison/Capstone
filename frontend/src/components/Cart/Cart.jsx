@@ -2,17 +2,15 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import useAuth from '../../hooks/useAuth';
 import { useParams } from 'react-router-dom'
+import CartMapper from '../../components/CartMapper/CartMapper'
 
 
-const CartPage = ({selected_product}) => {
+const CartPage = () => {
     const[cart, setCart] = useState([]);
     const[user, token] = useAuth();
     const{productId} = useParams()
     const[product, setProduct] = useState(productId)
-    console.log(cart)
-    console.log(user.id)    
-    console.log(product)
-    console.log("selected product", selected_product)
+    console.log("cart", cart)
        
 
     useEffect(() => {
@@ -30,7 +28,9 @@ const CartPage = ({selected_product}) => {
     async function postCart() {
         let newCart = {
             product: product,
-            user: user.id
+            user: user.id,
+            product_id: product,
+            user_id: user.id
         }
         await axios
             .post('http://127.0.0.1:8000/cart/post/',newCart, {
@@ -39,22 +39,15 @@ const CartPage = ({selected_product}) => {
                     },
                     
                 })
-            .then((response) => setCart(response.data))
+            .then((response) => setCart([response.data]))
             .catch((error) => console.error(error));
+            
     }
+    console.log('axios put', cart)
     return ( 
-        <ul>
-            <li>
-                {cart.id}
-            </li>
-            <li>
-                {cart.product}
-            </li>
-            <li>   
-                {cart.user}
-            </li>
-        </ul>
-       
+        <>
+        <CartMapper cart={cart}/>
+        </>
 
      );
 }
