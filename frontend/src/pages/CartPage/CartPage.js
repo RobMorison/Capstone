@@ -26,10 +26,16 @@ const CartPage = () => {
             .then((response) => setUser_Cart(response.data))
             .catch((error) => console.error(error));
     }
+
+    function addNewProduct(entry){
+        let tempEntries = [...user_cart, entry];
+        setUser_Cart(tempEntries);
+    }
     
     return ( 
         <>
         {/* <h1>cart page</h1> */}
+        <Cart addNewProduct={addNewProduct}/>
         <CartMapper cart={user_cart} getCart={getCart}/>
 
         </>

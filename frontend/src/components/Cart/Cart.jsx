@@ -38,7 +38,7 @@ const Cart = () => {
     console.log('axios put', cart)
     return ( 
         <>
-        <CartMapper cart={cart}/>
+        
         </>
 
      );
