@@ -32,7 +32,7 @@ const Navigationbar = () => {
             </Link>
           </li>
           <li className="brand">
-            <Link to ="/cart" style={{ textDecoration: "none", color: "white" }}>
+            <Link to ="/cart/post/:productId" style={{ textDecoration: "none", color: "white" }}>
               <b>Cart</b>
             </Link>
           </li>

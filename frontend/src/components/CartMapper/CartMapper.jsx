@@ -4,7 +4,6 @@ const CartMapper = ({ cart }) => {
     console.log('cart mapper', cart)
 
     return ( 
-        // <h1>Hello world</h1>
         <table className='table'>
         <thead>
             <tr>

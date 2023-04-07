@@ -39,12 +39,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/products/:productId" element={<ProductDetailPage />}/> {/* ProductDetailPage component */}
-        {/* <Route path="/products/1" element={<BasicBoardPage/>} />
-        <Route path="/products/2" element={<ThreeWoodPage/>} />
-        <Route path="/products/3" element={<LargeBasicPage/>} />
-        <Route path="/products/4" element={<BrisketPage/>} /> */}
         <Route path= "/cart/post/:productId" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
-      
       </Routes>
       <Footer />
     </div>

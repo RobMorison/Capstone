@@ -17,14 +17,6 @@ const CartPage = () => {
         postCart();
     }, [token]);
 
-    async function getCart() {
-        await axios
-            .get('http://127.0.0.1:8000/cart/')
-            .then((response) => setCart(response.data))
-            .catch((error) => console.error(error));
-            console.log('get cart', cart)
-    }
-
     async function postCart() {
         let newCart = {
             product: product,

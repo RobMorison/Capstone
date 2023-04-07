@@ -17,11 +17,7 @@ def get_all_cart(request):
         serializer = CartSerializer(carts, many=True)
         return Response(serializer.data)
 
-def user_cart(request, pk):
-    cart = get_object_or_404(Cart, pk=pk)
-    if request.method == 'GET':
-        serializer = CartSerializer(cart);
-        return Response(serializer.data)
+
     
 @api_view(['POST'])
 @permission_classes([IsAuthenticated])
@@ -31,3 +27,19 @@ def post_cart(request):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
+def user_cart(request):
+
+    if request.method == 'GET':
+
+        user_id = request.query_params.get('user_id')
+        print(user_id)
+
+        queryset = Cart.objects.all()
+
+        if user_id:
+            queryset = queryset.filter(user__id=user_id)
+        serializer = CartSerializer(queryset, many=True);
+        return Response(serializer.data)
