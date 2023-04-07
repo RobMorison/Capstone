@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 import CartMapper from '../../components/CartMapper/CartMapper'
 
 
-const Cart = () => {
+const AddToCartPage = () => {
     const[cart, setCart] = useState([]);
     const[user, token] = useAuth();
     const{productId} = useParams()
@@ -44,4 +44,4 @@ const Cart = () => {
      );
 }
  
-export default Cart;
+export default AddToCartPage;
