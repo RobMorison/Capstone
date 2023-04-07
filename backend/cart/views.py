@@ -43,3 +43,12 @@ def user_cart(request):
             queryset = queryset.filter(user__id=user_id)
         serializer = CartSerializer(queryset, many=True);
         return Response(serializer.data)
+    
+@api_view(['DELETE'])
+@permission_classes([IsAuthenticated])
+
+def delete_cart(request, pk):    
+    cart = get_object_or_404(Cart, pk=pk)
+    if request.method == 'DELETE':
+        cart.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)

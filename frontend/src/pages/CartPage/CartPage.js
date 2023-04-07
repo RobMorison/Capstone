@@ -30,7 +30,7 @@ const CartPage = () => {
     return ( 
         <>
         {/* <h1>cart page</h1> */}
-        <CartMapper cart={user_cart}/>
+        <CartMapper cart={user_cart} getCart={getCart}/>
 
         </>
      );
