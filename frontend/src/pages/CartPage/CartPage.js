@@ -27,6 +27,8 @@ const CartPage = () => {
             .catch((error) => console.error(error));
     }
 
+    // taking my cart component which posts the newly added product from the cart button and adding it to my user_cart
+    // which I then pass to my mapper which will map the newly added product onto the end of my cart
     function addNewProduct(entry){
         let tempEntries = [...user_cart, entry];
         setUser_Cart(tempEntries);
