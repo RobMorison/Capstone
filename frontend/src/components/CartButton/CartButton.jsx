@@ -9,11 +9,14 @@ const CartButton = ({product}) => {
     console.log("cart", cart)
     console.log('cart button', product.quantity)
 
+    function handleSubmit(event){}
+
+    
     if(product.quantity === 0){
         return(
             <>
             <h1>Sorry this product is sold out!</h1>
-            <Link to={'/waitinglist'}>
+            <Link to={`/waitinglist/${productId}`}>
                 <button onClick={handleSubmit}>
                     Join Waiting list
                 </button>
@@ -22,7 +25,7 @@ const CartButton = ({product}) => {
         );
     }
 
-    function handleSubmit(event){}   
+   
             
     return ( 
         <> 

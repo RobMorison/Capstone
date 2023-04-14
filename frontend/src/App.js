@@ -39,7 +39,7 @@ function App() {
                   <Route path="/products/:productId" element={<ProductDetailPage />}/> {/* ProductDetailPage component */}
                   <Route path= "/cart/post/:productId" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
                   <Route path="/cart" element={<PrivateRoute><CartPage/></PrivateRoute>}/>
-                  <Route path="/waitinglist" element={<WaitingListPage />} />
+                  <Route path="/waitinglist/:productId" element={<WaitingListPage />} />
             </Routes>
       <Footer />
     </div>
