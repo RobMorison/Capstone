@@ -43,7 +43,8 @@ INSTALLED_APPS = [
     'cars.apps.CarsConfig',  # This app is for example use only
     'address',
     'cart',
-    'product'
+    'product',
+    'waitlist'
 ]
 
 MIDDLEWARE = [

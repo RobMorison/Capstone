@@ -6,7 +6,7 @@ import SearchFunction from "../../components/SearchFunction/SearchFunction";
 
 const WelcomePage = () => {
   const [products, setProducts] = useState([]);
-  console.log(products);
+  console.log('welcome page', products);
 
   useEffect(() => {
     getProducts();
@@ -17,7 +17,7 @@ const WelcomePage = () => {
       .get("http://127.0.0.1:8000/product")
       .then((response) => setProducts(response.data))
       .catch((error) => console.error(error));
-        console.log("getproducts", products);
+      console.log("getproducts", products);
   }
 
   return (

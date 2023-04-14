@@ -22,23 +22,23 @@ import PrivateRoute from "./utils/PrivateRoute";
 function App() {
   return (
     <div>
-      <Navigationbar />
-      <Routes>
-        <Route
-          path="/"
-          element={
-            <PrivateRoute>
-              <HomePage />
-            </PrivateRoute>
-          }
-        />
-        <Route path="/products" element={<WelcomePage />} />
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
-        <Route path="/products/:productId" element={<ProductDetailPage />}/> {/* ProductDetailPage component */}
-        <Route path= "/cart/post/:productId" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
-        <Route path="/cart" element={<PrivateRoute><CartPage/></PrivateRoute>}/>
-      </Routes>
+          <Navigationbar />
+            <Routes>
+              <Route
+                path="/"
+                 element={
+                  <PrivateRoute>
+                  <HomePage />
+                  </PrivateRoute>
+                  }
+                  />
+                  <Route path="/products" element={<WelcomePage />} />
+                  <Route path="/register" element={<RegisterPage />} />
+                  <Route path="/login" element={<LoginPage />} />
+                  <Route path="/products/:productId" element={<ProductDetailPage />}/> {/* ProductDetailPage component */}
+                  <Route path= "/cart/post/:productId" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
+                  <Route path="/cart" element={<PrivateRoute><CartPage/></PrivateRoute>}/>
+            </Routes>
       <Footer />
     </div>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth'
-import { useParams } from 'react-router-dom';
 import Cart from "../../components/Cart/Cart";
 import CartMapper from '../../components/CartMapper/CartMapper';
 
@@ -36,9 +36,11 @@ const CartPage = () => {
     
     return ( 
         <>
-        {/* <h1>cart page</h1> */}
         <Cart addNewProduct={addNewProduct}/>
         <CartMapper cart={user_cart} getCart={getCart}/>
+        <Link to='/payment'>
+        <button>Check Out</button>
+        </Link>
 
         </>
      );

@@ -21,7 +21,6 @@ const CartMapper = ({ cart, getCart }) => {
         <table className='table'>
         <thead>
             <tr>
-            <th>Quantity</th>
             <th>Item Name</th>
             <th>Item Description</th>
             <th>Price</th>
@@ -32,7 +31,6 @@ const CartMapper = ({ cart, getCart }) => {
             {cart.map((el, id) => {
             return (
                 <tr key={id}>
-                <td>1</td>
                 <td>{el.product.name}</td>
                 <td>{el.product.description}</td>
                 <td>{el.product.price}</td>
