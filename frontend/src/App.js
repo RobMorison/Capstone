@@ -9,6 +9,7 @@ import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import CartPage from "./pages/CartPage/CartPage"
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetail";
+import WaitingListPage from "./pages/WaitingListPage/WaitingList";
 
 
 // Component Imports
@@ -38,6 +39,7 @@ function App() {
                   <Route path="/products/:productId" element={<ProductDetailPage />}/> {/* ProductDetailPage component */}
                   <Route path= "/cart/post/:productId" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
                   <Route path="/cart" element={<PrivateRoute><CartPage/></PrivateRoute>}/>
+                  <Route path="/waitinglist" element={<WaitingListPage />} />
             </Routes>
       <Footer />
     </div>

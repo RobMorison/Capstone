@@ -2,14 +2,14 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from "axios"
 import CartButton from '../../components/CartButton/CartButton';
-import Cart from '../../components/Cart/Cart'
+
 
 const ProductDetail = () => {
 
     const { productId } = useParams();
-    const [product, setProduct] = useState(productId)
-    // console.log('product detail page', productId)
-    console.log(product)
+    const [product, setProduct] = useState(productId);
+    console.log('product detail page', product)
+      
 
     useEffect(() => {
         getProducts();
@@ -23,7 +23,6 @@ const ProductDetail = () => {
         console.log("product detail page get request", product);
     }
 
-    
 
     return ( 
         <>
@@ -31,7 +30,7 @@ const ProductDetail = () => {
         <h1>{product.description}</h1>
         <h1>{product.price}</h1>
         <img src={product.image} />
-        <CartButton />
+        <CartButton product={product}/>
         </>
 
         
