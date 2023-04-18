@@ -10,6 +10,7 @@ import WelcomePage from "./pages/WelcomePage/WelcomePage";
 import CartPage from "./pages/CartPage/CartPage"
 import ProductDetailPage from "./pages/ProductDetailPage/ProductDetail";
 import WaitingListPage from "./pages/WaitingListPage/WaitingList";
+import CustomBoardPage from "./pages/CustomBoardPage/CustomBoard";
 
 
 // Component Imports
@@ -40,6 +41,7 @@ function App() {
                   <Route path= "/cart/post/:productId" element={<PrivateRoute><CartPage/></PrivateRoute>}/> 
                   <Route path="/cart" element={<PrivateRoute><CartPage/></PrivateRoute>}/>
                   <Route path="/waitinglist/:productId" element={<WaitingListPage />} />
+                  <Route path="products/5" element={<CustomBoardPage/>}/>
             </Routes>
       <Footer />
     </div>

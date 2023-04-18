@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductList from "../../components/ProductList/ProductList";
 import SearchFunction from "../../components/SearchFunction/SearchFunction";
+import "./WelcomePage.css"
 
 
 const WelcomePage = () => {
@@ -22,9 +23,12 @@ const WelcomePage = () => {
 
   return (
     <>
-
+      <div className="search-function">
       <SearchFunction products={products} setProducts={setProducts} />
+      </div>
+      <div className="product-list">
       <ProductList products={products} />
+      </div>
     </>
   );
 };

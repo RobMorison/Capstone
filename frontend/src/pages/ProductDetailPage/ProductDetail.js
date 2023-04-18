@@ -28,7 +28,7 @@ const ProductDetail = () => {
         <>
         <h1>{product.name}</h1>
         <h1>{product.description}</h1>
-        <h1>{product.price}</h1>
+        <h1>${product.price}</h1>
         <img src={product.image} />
         <CartButton product={product}/>
         </>

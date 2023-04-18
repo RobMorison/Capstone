@@ -1,5 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap");
 
+:root {
+  --brand: red;
+  --white: white;
+  
+}
 *,
 *::before,
 *::after {
@@ -55,8 +60,4 @@ button:hover {
   margin: 5px;
   padding: 3px 7px;
   font-size: 17px;
-}
-
-.inactive{
-  color: black;
 }

@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import axios from "axios"
+import toast, { Toaster } from 'react-hot-toast'
 
 const WaitingList = () => {
 
@@ -10,10 +11,13 @@ const WaitingList = () => {
     const[email, setEmail] = useState('');
     console.log('waiting list', productId)
 
+    const notify = ()=> toast('Thank you, you have been add to the waiting list!')
+
 
 
     async function handleSubmit(event){
-        event.preventDefault();
+        // event.preventDefault();
+        
         const newEntry =await axios
             .post('http://127.0.0.1:8000/waitlist/',{
             first_name: first_name,
@@ -21,6 +25,7 @@ const WaitingList = () => {
             email: email,
             product_id: productId
         });
+        // toast('Thank you, you have been added to the waiting list!')
         console.log('waiting list', newEntry)
     }
 
@@ -39,12 +44,23 @@ const WaitingList = () => {
                 <label>E-mail: </label>
                 <input type='text' value={email} onChange={(event) => setEmail(event.target.value)}/>
             </ul>
-            <ul>
-                <label>Product ID: </label>
-                <input  value={productId} />
-            </ul>
-            <button type='submit'>Join Waiting List</button>
+            <Toaster
+                containerStyle={{
+                    position: 'relative',
+                }}
+                toastOptions= {{
+                    className: '',
+                    style: {
+                        border: '4px solid #ff0000',
+                        padding: '16px',
+                        color: '#ff0000',
+                    },
+                }}/>
+            <button type='submit' onClick={notify}>Join Waiting List</button>
         </form>
+        <Link to={'/products'}>
+            <button>Return to Products Page</button>
+        </Link>
         </>
      );
 }

@@ -1,0 +1,8 @@
+.search-function {
+    display: flex;
+    padding: 1rem
+}
+
+.product-list {
+    display: grid;
+}
