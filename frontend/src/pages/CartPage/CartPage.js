@@ -8,9 +8,6 @@ import CartMapper from '../../components/CartMapper/CartMapper';
 const CartPage = () => {
     const[user_cart, setUser_Cart] = useState([]);
     const[user, token] = useAuth(); 
-    console.log('cart page', user_cart)
-    console.log('cart page user id', user.id)
-
 
     useEffect(() => {
         getCart();

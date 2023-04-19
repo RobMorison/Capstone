@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios'
 import useAuth from '../../hooks/useAuth';
 import { useParams } from 'react-router-dom'
-import CartMapper from '../../components/CartMapper/CartMapper'
 
 
 const Cart = () => {
@@ -21,8 +20,10 @@ const Cart = () => {
         let newCart = {
             product: product,
             user: user.id,
+            number: 1,
             product_id: product,
-            user_id: user.id
+            user_id: user.id,
+            
         }
         await axios
             .post('http://127.0.0.1:8000/cart/post/',newCart, {
@@ -35,7 +36,7 @@ const Cart = () => {
             .catch((error) => console.error(error));
             
     }
-    console.log('axios put', cart)
+    console.log('axios post', cart)
     return ( 
         <>
         

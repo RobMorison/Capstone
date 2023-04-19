@@ -1,5 +1,5 @@
 import React, {useState}from 'react';
-import { Link } from 'react-router-dom'
+import Table from '../../components/Table/Table';
 
 const CustomBoard = () => {
     const woodData = [
@@ -41,18 +41,19 @@ const CustomBoard = () => {
             </label>
             {/* <button type='submit'>Change Dimensions</button> */}
         </form>
-        <label>Select Your Wood Options:
+        {/* <label>Select Your Wood Options:
             <select
                 name="selectedWood"
                 defaultValue={[]}
-                multiple={true}
+               
             >
                 <option value="Maple">Maple</option>
                 <option value="Walnut">Walnut</option>
                 <option value="Cherry">Cherry</option>
                 <option value="Ebony">Ebony</option>
             </select>
-        </label>
+        </label> */}
+        <Table/>
         {/* <label>Wood Option #2
             <select>
                 {woodData.map(product => {
