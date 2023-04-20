@@ -23,6 +23,7 @@ const AddToCartPage = () => {
         let newCart = {
             product: product,
             user: user.id,
+            number: 1,
             product_id: product,
             user_id: user.id
         }
@@ -54,10 +55,10 @@ const AddToCartPage = () => {
     console.log('axios put', cart)
     return ( 
         <>
-        <CartMapper cart={cart} getCart={getCart}/>
         <Link to={'/cart/'}>
-        <button onClick={handleSubmit}>Go To My Cart</button>
+            <button onClick={handleSubmit}>Confirm add Item to Cart</button>
         </Link>
+
         </>
 
      );

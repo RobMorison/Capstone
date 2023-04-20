@@ -36,7 +36,7 @@ const CartPage = () => {
         <Cart addNewProduct={addNewProduct}/>
         <CartMapper cart={user_cart} getCart={getCart}/>
         <Link to='/payment'>
-        <button>Check Out</button>
+        <button cart={user_cart}>Check Out</button>
         </Link>
 
         </>
