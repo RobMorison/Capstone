@@ -1,8 +1,14 @@
 import { loadStripe } from "@stripe/stripe-js";
 import CardIcon from "../../images/credit-card.svg"
 import ProductImage from "../../images/product-image.jpg";
+import React, { useState, useEffect } from 'react';
+import useAuth from "../../hooks/useAuth";
 
-import "../../styles.css";
+//This is what we will use to grab the data being passed over
+import { useLocation } from "react-router-dom";
+
+import "../../App.css";
+
 
 let stripePromise;
 
@@ -16,13 +22,19 @@ const getStripe = () => {
 };
 
 const Checkout = () => {
-  const item = {
-    price: "price_1MufyIATWQSQDpE3iAvQhw6i",
-    quantity: 1
-  };
+  const {state} = useLocation();
+  const[user, token] = useAuth();
+  console.log('checkout item', ...state);
+  const item = state.map(el => {
+    return(
+      {
+        price: el.product.stripe_price,
+        quantity: el.number
+      }
+    )});
 
   const checkoutOptions = {
-    lineItems: [item],
+    lineItems: [...item],
     mode: "payment",
     successUrl: `${window.location.origin}/products`,
     cancelUrl: `${window.location.origin}/cart`
@@ -37,17 +49,22 @@ const Checkout = () => {
   };
   return (
     <div className="checkout">
-      <h1>Stripe Checkout</h1>
-      <p className="checkout-title">Design+Code React Hooks Course</p>
-      <p className="checkout-description">
-        Learn how to build a website with React Hooks
-      </p>
-      <h1 className="checkout-price">$19</h1>
-      <img
-        className="checkout-product-image"
-        src={ProductImage}
-        alt="Product"
-      />
+      {console.log("Users cart: ", state)}
+      <h1>Cart for {user.username}</h1>
+      <p className="checkout-description">{state[0].product.name} {state[1].product.name}</p>
+      <h1 className="checkout-price">
+        {state.map(el => {
+          return(
+            <>{el.product.price},
+            {el.number}
+            <img
+              className="checkout-product-image"
+              src={el.product.image}
+              alt="Product"
+            /></>
+          )
+        })}
+      </h1>
       <button className="checkout-button" onClick={redirectToCheckout}>
         <div className="grey-circle">
           <div className="purple-circle">
