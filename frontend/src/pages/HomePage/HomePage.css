@@ -1,0 +1,33 @@
+.welcome {
+    margin: 0 auto;
+    max-width: 600px;
+    overflow: auto;
+    text-align: center;
+    padding: 2rem;
+}
+
+.hr {
+    border-style: solid;
+    margin: 2rem;
+}
+
+.section-header {
+    margin: auto 1rem;
+}
+
+.section-header a {
+    text-decoration: none;
+    list-style-type: none;
+    color: black;
+    font-size: 2rem;
+    font-weight: bolder;
+    padding-left: 1.5rem;
+}
+
+.homepage-products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.5rem;
+    margin-left: 3.5rem;
+    margin-top: 1rem;
+}

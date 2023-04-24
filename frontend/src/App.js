@@ -15,6 +15,8 @@ import WaitingListPage from "./pages/WaitingListPage/WaitingList";
 import CustomBoardPage from "./pages/CustomBoardPage/CustomBoard";
 import CheckOutPage from "./pages/CheckOutPage/CheckOut";
 import AddToCartPage from "./pages/AddToCartPage/AddToCartPage";
+import SuccessPage from "./pages/SuccessPage/Success";
+import AboutUsPage from "./pages/AboutUsPage/AboutUs";
 
 
 // Component Imports
@@ -34,20 +36,21 @@ function App() {
               <Route
                 path="/"
                  element={
-                  <PrivateRoute>
+                  
                   <HomePage />
-                  </PrivateRoute>
+                 
                   }
                   />
                   <Route path="/products" element={<WelcomePage />} />
                   <Route path="/register" element={<RegisterPage />} />
                   <Route path="/login" element={<LoginPage />} />
-                  <Route path="/products/:productId" element={<ProductDetailPage />}/> {/* ProductDetailPage component */}
+                  <Route path="/products/:productId" element={<PrivateRoute><ProductDetailPage/></PrivateRoute>}/> {/* ProductDetailPage component */}
                   <Route path= "/cart/post/:productId" element={<PrivateRoute><AddToCartPage/></PrivateRoute>}/> 
                   <Route path="/cart" element={<PrivateRoute><CartPage/></PrivateRoute>}/>
                   <Route path="/waitinglist/:productId" element={<WaitingListPage />} />
-                  <Route path="/products/5" element={<CustomBoardPage/>}/>
                   <Route path="/payment" element={<CheckOutPage />}/>
+                  <Route path="/success" element={<SuccessPage/>}/>
+                  <Route path="/about_us" element={<AboutUsPage/>}/>
                   
             </Routes>
       <Footer />

@@ -16,6 +16,7 @@
 html {
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  margin-bottom: 4rem;
 }
 
 p {
@@ -97,9 +98,10 @@ code {
 .checkout-price {
   font-style: normal;
   font-weight: 600;
-  font-size: 60px;
+  font-size: 40px;
   line-height: 95px;
-  margin: 0;
+  margin-left: 2rem;
+  margin-top: 2rem;
   color: rgba(0, 0, 0, 1);
 }
 

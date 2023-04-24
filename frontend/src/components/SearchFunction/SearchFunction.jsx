@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import "./SearchFunction.css"
 
 const SearchFunction = ({products, setProducts}) => {
 
@@ -28,7 +29,7 @@ const SearchFunction = ({products, setProducts}) => {
     }
 
     return ( 
-        <form onSubmit={handleSubmit}>
+        <form className="search" onSubmit={handleSubmit}>
             <label></label>
             <input type='text' value={searchTerm} placeholder= 'Search' onChange={(event) => setSearchTerm(event.target.value)}/>
             <button>Search</button>

@@ -1,7 +1,6 @@
 import { loadStripe } from "@stripe/stripe-js";
-import CardIcon from "../../images/credit-card.svg"
-import ProductImage from "../../images/product-image.jpg";
-import React, { useState, useEffect } from 'react';
+import CardIcon from "../../images/credit-card.svg";
+import React from 'react';
 import useAuth from "../../hooks/useAuth";
 
 //This is what we will use to grab the data being passed over
@@ -36,7 +35,7 @@ const Checkout = () => {
   const checkoutOptions = {
     lineItems: [...item],
     mode: "payment",
-    successUrl: `${window.location.origin}/products`,
+    successUrl: `${window.location.origin}/success`,
     cancelUrl: `${window.location.origin}/cart`
   };
 
@@ -51,20 +50,21 @@ const Checkout = () => {
     <div className="checkout">
       {console.log("Users cart: ", state)}
       <h1>Cart for {user.username}</h1>
-      <p className="checkout-description">{state[0].product.name} {state[1].product.name}</p>
-      <h1 className="checkout-price">
+      <div className="checkout-price">
         {state.map(el => {
           return(
-            <>{el.product.price},
-            {el.number}
+            <><ul>{el.number}@
+            {el.product.price}
             <img
               className="checkout-product-image"
               src={el.product.image}
               alt="Product"
-            /></>
+              width='30'
+              height='200'
+            /></ul></>
           )
         })}
-      </h1>
+      </div>
       <button className="checkout-button" onClick={redirectToCheckout}>
         <div className="grey-circle">
           <div className="purple-circle">

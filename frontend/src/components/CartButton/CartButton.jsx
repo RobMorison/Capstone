@@ -2,7 +2,8 @@ import React, { useState, UseEffect } from 'react';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import useAuth from '../../hooks/useAuth'
+import useAuth from '../../hooks/useAuth';
+import "./CartButton.css"
 
 
 const CartButton = ({product}) => {
@@ -53,16 +54,14 @@ const CartButton = ({product}) => {
             
     return ( 
         <> 
-        {/* <Link  to={`/cart/post/${productId}`}> */}
-        <button onClick={postCart}>
+        <button className="add" onClick={postCart}>
             Add to Cart
         </button>
-        {/* </Link> */}
         <Link to={'/products/'}>
-            <button onClick={handleSubmit}>Keep Shopping</button>
+            <button className="keep" onClick={handleSubmit}>Keep Shopping</button>
         </Link>
         <Link to={'/cart/'}>
-            <button onClick={handleSubmit}>Go to Cart</button>
+            <button className="cart" onClick={handleSubmit}>Go to Cart</button>
         </Link>
         </>
      );

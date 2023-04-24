@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from "axios"
 import CartButton from '../../components/CartButton/CartButton';
-
+import "./ProductDetailPage.css"
 
 const ProductDetail = () => {
 
@@ -26,11 +26,23 @@ const ProductDetail = () => {
 
     return ( 
         <>
-        <h1>{product.name}</h1>
-        <h1>{product.description}</h1>
-        <h1>${product.price}</h1>
-        <img src={product.image} />
-        <CartButton product={product}/>
+        <section className="products">
+            <h1 className="name">
+                {product.name}
+            </h1>
+            <div className="image">
+                <img src={product.image} alt="product" />
+            </div>
+            <div className="description">
+                {product.description}
+            </div>
+            <div className="price">
+                ${product.price}
+            </div>
+            <div className="button">
+                <CartButton product={product}/>
+            </div>
+        </section>
         </>
 
         

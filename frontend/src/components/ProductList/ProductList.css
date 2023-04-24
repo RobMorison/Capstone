@@ -1,0 +1,52 @@
+.product-card {
+    display: flex;
+    justify-content: center;
+}
+
+.product-card hr {
+    width: 75%;
+    margin-bottom: 1rem;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.product-details {
+    display: grid; /* used to get objects in line in the same div */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 1.5rem;
+    justify-content: center;
+}
+
+.product-name {
+    font-size: larger;
+}
+
+.product-description {
+    margin-bottom: 1rem;
+}
+
+.product-cta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.product-cta a {
+    font-size: large;
+    font-weight: bold;
+    text-underline-offset: 8px;
+    color: var(--brand);
+}
+
+.product-cta button {
+    border-style: none;
+    background-color: var(--brand);
+    color: var(--white);
+    padding: 0.25rem, 1rem;
+    font-weight: bold;
+}
+
+.product-cta button:hover {
+    cursor: pointer;
+}

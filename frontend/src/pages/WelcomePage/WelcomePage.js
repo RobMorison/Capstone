@@ -18,11 +18,13 @@ const WelcomePage = () => {
       .get("http://127.0.0.1:8000/product")
       .then((response) => setProducts(response.data))
       .catch((error) => console.error(error));
-      console.log("getproducts", products);
+        console.log("getproducts", products);
   }
 
   return (
     <>
+      <h1 className="products"> Our Products</h1>
+      <hr className="hr"></hr>
       <div className="search-function">
       <SearchFunction products={products} setProducts={setProducts} />
       </div>
