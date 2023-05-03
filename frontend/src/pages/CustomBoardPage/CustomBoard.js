@@ -51,8 +51,8 @@ const CustomBoard = () => {
 
     return ( 
         <>
-        <h1>{board_options[4].name}</h1>
-        <img src={board_options[4].image}></img>
+        {/* <h1>{board_options[4].name}</h1>
+        <img src={board_options[4].image}></img> */}
         
         <div className="select-container">
             <label>Select Your Cutting Board to Customize:
