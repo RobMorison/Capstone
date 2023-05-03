@@ -29,6 +29,11 @@ const Navigationbar = () => {
             </Link>
           </li>
           <li className="brand">
+            <Link to ="/my_waitinglist" style={{ textDecoration: "none", color: "white" }}>
+              <b>My Waiting List</b>
+            </Link>
+          </li>
+          <li className="brand">
             <Link to ="/cart" style={{ textDecoration: "none", color: "white" }}>
               <b>Cart</b>
             </Link>

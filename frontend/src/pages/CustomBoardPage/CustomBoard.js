@@ -1,77 +1,74 @@
-import React, {useState}from 'react';
-import Table from '../../components/Table/Table';
+import React, {useState, useEffect}from 'react';
+import axios from "axios"
+import CustomBoardComponent from '../../components/CustomBoardComponent/CustomBoardComponent';
 
 const CustomBoard = () => {
-    const woodData = [
-        {
-            name: "Walnut",
-            color: "#4B351A",
-        },
-        {
-            name: "Maple",
-            color: "#FDE96D",
-        },
-        {
-            name: "Cherry",
-            color: "#6F0011",
-        },
-        {
-            name: "Ebony",
-            color: "#292117",
-        },
-    ]
-    const [length, setLength] = useState()
-    const [width, setWidth] = useState()
 
-    function handleSubmit(event) {
+    const[board_options, setBoard_Options] = useState([]);
+    const[selected_board, setSelected_Board] = useState([]);
+    console.log('custom page board options', board_options)
+    console.log('custom page', selected_board)
+
+    useEffect(() => {
+        getProducts();
+      }, []);
+    
+      async function getProducts() {
+        await axios
+          .get("http://127.0.0.1:8000/product")
+          .then((response) => setBoard_Options(response.data))
+          .catch((error) => console.error(error))
+      }
+
+    // if (selected_board == "Basic Board"){
+    //   return( 
+    //     <>
+    //         {board_options[0].name}
+    //     </>
+    //   );
+    // }
+
+    // if (selected_board == "Three Wood Basic Board"){
+    //     return(
+    //         <>
+    //             {board_options[1].name}
+    //         </>
+    //     );
+    //     }
+    
+    //another variable to contain the object using the find method
+    //then setSelected_Board to that object
+    
+
+    function handleChange(event){
         event.preventDefault();
-    }
+        const selected_value = event.target.value
+        console.log('handle change', event.target.value)
+        const result = board_options.find(({name}) => name === selected_value)
+        console.log('result', result)
+        setSelected_Board(result)
+        };
 
     return ( 
         <>
-        <h1>Hello</h1>
-        <form onSubmit={handleSubmit}>
-            <label>
-                <input type="text" value={length} onChange={(event) =>setLength(event.target.value)} />
-                 :Board Length
+        <h1>{board_options[4].name}</h1>
+        <img src={board_options[4].image}></img>
+        
+        <div className="select-container">
+            <label>Select Your Cutting Board to Customize:
+                <select onChange={handleChange}>
+                    {board_options.map((el, index) => {
+                        return(
+                            <option key={index} value={el.name}>{el.name}</option>)}  
+                        )
+                    }
+                </select>
             </label>
-            <label>
-                <input type="text" value={width} onChange={(event) =>setWidth(event.target.value)} />
-                 :Board Width
-            </label>
-            {/* <button type='submit'>Change Dimensions</button> */}
-        </form>
-        {/* <label>Select Your Wood Options:
-            <select
-                name="selectedWood"
-                defaultValue={[]}
-               
-            >
-                <option value="Maple">Maple</option>
-                <option value="Walnut">Walnut</option>
-                <option value="Cherry">Cherry</option>
-                <option value="Ebony">Ebony</option>
-            </select>
-        </label> */}
-        <Table/>
-        {/* <label>Wood Option #2
-            <select>
-                {woodData.map(product => {
-                    return <option value={product.name}>{product.name}</option>
-                })}
-            </select>
-        </label>
-        <label>Wood Option #3
-            <select>
-                {woodData.map(product => {
-                    return <option value={product.name}>{product.name}</option>
-                })}
-            </select>
-        </label> */}
+        </div>
+        <div>
+            <CustomBoardComponent selected_board={selected_board}/>
 
-        <svg>
-            <rect width={width * 50} height={length *50}/>
-        </svg>
+        </div>
         </>
      );
 }
