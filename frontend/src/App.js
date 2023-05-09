@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import "@stripe/stripe-js";
 
 import "./App.css";
+import logo from './components/assets/logo.png'
 
 // Pages Imports
 import HomePage from "./pages/HomePage/HomePage";

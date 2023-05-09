@@ -17,3 +17,15 @@ def add_to_waitlist(request):
         serializer.is_valid(raise_exception=True)
         serializer.save()
         return Response(serializer.data, status=status.HTTP_201_CREATED)
+
+@api_view(['GET'])
+@permission_classes([AllowAny])
+
+def get_my_waitlist(request):
+    if request.method == 'GET':
+        email_param = request.query_params.get('email')
+        queryset = Waitlist.objects.all()
+        if email_param:
+            queryset = queryset.filter(email=email_param)
+        serializer = WaitlistSerializer(queryset, many=True)
+        return Response(serializer.data)

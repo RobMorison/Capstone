@@ -34,6 +34,7 @@ const CustomBoardComponent = ({selected_board}) => {
 
       console.log('first wood before post', first_wood)
       console.log('second wood before post', second_wood)
+
       async function postCustom() {
         let newCustom = {
             name: selected_board.name,

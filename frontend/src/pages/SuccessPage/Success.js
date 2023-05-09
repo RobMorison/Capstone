@@ -10,6 +10,7 @@ const SuccessPage = () => {
     const[user_cart, setUser_Cart] = useState([state])
 
     console.log('success', user_cart)
+    console.log('success', user_cart)
 
     useEffect(() => {
         getCart();
@@ -23,30 +24,27 @@ const SuccessPage = () => {
                     },
                 })
             .then((response) => setUser_Cart(response.data))
-            .catch((error) => console.error(error))
-    }
-
-    // async function deleteCart()
-    //     await axios
-    //         .delete(`http://127.0.0.1:8000/cart/${el.id}/`, {
-    //             headers: {
-    //                 Authorization: "Bearer " + token,
-    //             },
-    //         })
-    // async function deleteCart() {
-    //     await axios
-    //         .delete(`http://127.0.0.1:8000/cart/${user_cart.id}/`, {
-    //             headers: {
-    //             Authorization: "Bearer " + token,
-    //              },
-    //             });
-    //     console.log('delete item');
-    //     await getCart();
-    //     }
-    
-    
-
-//     
+            .catch((error) => console.error(error));
+        }
+        
+    clear()
+        
+    function clear() {user_cart.map((el, index) => {
+        return(
+            deleteItem(index)
+            )
+            
+    })};
+    async function deleteItem(index){ 
+        console.log(user_cart[index].id)
+            await axios
+            .delete(`http://127.0.0.1:8000/cart/${user_cart[index].id}/`, {
+                headers: {
+                    Authorization: "Bearer " + token,
+                },
+            });
+        }      
+        
     
     return ( 
         <h1>Thank you for your purchase!! 🎉</h1>

@@ -1,0 +1,11 @@
+.checkout-price {
+    margin: 1rem;
+    justify-content: space-around;
+    padding: 1rem;
+}
+
+.checkout-price ul {
+    display: flex;
+    justify-content: center;
+}
+

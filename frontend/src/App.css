@@ -3,7 +3,7 @@
 :root {
   --brand: #ff0000;
   --white: white;
-  
+  background-image: image-set('https://i.postimg.cc/TPnsYq9R/Logo-White-Background.png');
 }
 *,
 *::before,

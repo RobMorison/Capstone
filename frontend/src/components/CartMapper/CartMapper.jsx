@@ -60,7 +60,7 @@ const CartMapper = ({ cart, getCart }) => {
                 <td>{el.product.price}</td>
                 <td>{el.number}</td>
                 <td><img src={el.product.image}></img></td>
-                <td><button onClick={() => putCart(el.id, index)}>Add Another one</button></td>
+                {/* <td><button onClick={() => putCart(el.id, index)}>Add Another one</button></td> */}
                 <td><button onClick={() => deleteItem(el.id)}>Remove from Cart</button></td>
                 </tr>
                 
