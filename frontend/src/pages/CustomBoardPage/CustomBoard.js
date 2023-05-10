@@ -1,6 +1,7 @@
 import React, {useState, useEffect}from 'react';
 import axios from "axios"
 import CustomBoardComponent from '../../components/CustomBoardComponent/CustomBoardComponent';
+import "./CustomBoard.css"
 
 const CustomBoard = () => {
 
@@ -65,7 +66,7 @@ const CustomBoard = () => {
                 </select>
             </label>
         </div>
-        <div>
+        <div className="selected-board">
             <CustomBoardComponent selected_board={selected_board}/>
 
         </div>

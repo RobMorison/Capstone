@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import useAuth from '../../hooks/useAuth'
+import "./CartMapper.css"
 
 const CartMapper = ({ cart, getCart }) => {
     console.log('cart mapper', cart)
@@ -41,24 +42,22 @@ const CartMapper = ({ cart, getCart }) => {
 
     return ( 
         <>
-        <table>
-        <thead>
-            <tr>
+        <table className="table">
+        <thead className="thead">
+            <tr className="trhead">
             <th >Item Name</th>
             <th >Item Description</th>
             <th >Price</th>
-            <th >Quantity</th>
             <th >Item Image</th>
             </tr>
         </thead>
-        <tbody>
+        <tbody className="tbody">
             {cart.map((el, index) => {
             return (
                 <tr key={index}>
                 <td>{el.product.name}</td>
                 <td>{el.product.description}</td>
                 <td>{el.product.price}</td>
-                <td>{el.number}</td>
                 <td><img src={el.product.image}></img></td>
                 {/* <td><button onClick={() => putCart(el.id, index)}>Add Another one</button></td> */}
                 <td><button onClick={() => deleteItem(el.id)}>Remove from Cart</button></td>

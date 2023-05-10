@@ -195,3 +195,18 @@ code {
   color: rgba(0, 0, 0, 1);
   margin: 0;
 }
+
+.table {
+  width: 100%;
+  text-align: center;
+}
+
+.thead {
+  position: sticky;
+  z-index: 100;
+}
+
+.th {
+  padding: var(--sm-spacing);
+
+}

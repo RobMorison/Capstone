@@ -82,15 +82,15 @@ const Checkout = () => {
       {console.log("Users cart: ", state)}
       <h1>Cart for {user.username}</h1>
       <div className="checkout-price">
-        <table>
-          <thead>
-            <tr>
+        <table className="table">
+          <thead className="thead">
+            <tr className="trhead">
               <th>Quantity</th>
               <th>Price</th>
               <th>Item Image</th>
             </tr>
           </thead>
-          <tbody>
+          <tbody className="tbody">
             {state.map((el,index) => {
               return(
                 <tr key={index}>

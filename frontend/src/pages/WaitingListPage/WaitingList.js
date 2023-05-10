@@ -12,7 +12,7 @@ const WaitingList = () => {
     const[email, setEmail] = useState('');
     console.log('waiting list', productId)
 
-    const notify = ()=> toast('Thank you, you have been add to the waiting list!')
+    const notify = ()=> toast('Thank you, you have been added to the waiting list!')
 
 
 
